@@ -43,7 +43,7 @@ export default function SiteFooter() {
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-driftwood">
             {SITE_TAGLINE}
           </p>
-          <p className="mt-4 max-w-xs text-xs leading-relaxed text-driftwood/80">
+          <p className="mt-4 max-w-xs text-xs leading-relaxed text-driftwood">
             {DATA_NOTE_LONG}
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function SiteFooter() {
         ))}
       </div>
       <div className="border-t border-line">
-        <p className="mx-auto max-w-7xl px-4 py-4 text-xs text-driftwood/80 sm:px-6">
+        <p className="mx-auto max-w-7xl px-4 py-4 text-xs text-driftwood sm:px-6">
           {SITE_NAME} is in private preview. This site is a working preview, not a
           public launch. Built by INFX Labs.
         </p>

@@ -110,7 +110,7 @@ export default function HomePage() {
               <SampleNote />
             </figcaption>
           </figure>
-          <p className="mt-3 text-xs text-driftwood/80">
+          <p className="mt-3 text-xs text-driftwood">
             Beach art is generated from the app dataset.
           </p>
         </div>
@@ -147,7 +147,7 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
-          <p className="mt-4 text-xs text-driftwood/80">
+          <p className="mt-4 text-xs text-driftwood">
             Golden hour today (Algarve, sample values): {GOLDEN_HOUR.goldenHour}.
           </p>
         </div>
