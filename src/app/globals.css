@@ -1,0 +1,91 @@
+/* Hallmark · macrostructure: Bento Grid · genre: modern-minimal · tone: utilitarian-coastal
+ * theme: custom (brand-locked SunScout app tokens) · vibe: "measured coastal data product"
+ * paper: #FAF6F0 sand (light band) · display: Inter sans (roman only) · accent: ocean teal, coral used sparingly
+ * axes: light / grotesk-sans / cool-teal · shape rule: buttons pill, cards 16px, inputs 8px
+ * states: default · hover · focus-visible · active covered per component
+ */
+
+@import "tailwindcss";
+
+@theme {
+  /* Brand tokens, mirrored from the app design lock (src/styles.css). */
+  --color-sand: #faf6f0;
+  --color-sand-deep: #f1e9dd;
+  --color-shell: #ffffff;
+  --color-marine: #0f1e2e;
+  --color-teal: #0a6e78;
+  --color-teal-deep: #07515a;
+  --color-coral: #ff6b5c;
+  --color-coral-deep: #e4574a;
+  --color-seagreen: #2e8b6b;
+  --color-driftwood: #5a6b7a;
+  --color-line: #e4dccf;
+
+  --font-sans:
+    "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  color-scheme: light;
+  overflow-x: clip;
+}
+
+body {
+  background: var(--color-sand);
+  color: var(--color-marine);
+  font-family: var(--font-sans);
+  min-width: 320px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-teal);
+  color: #fff;
+}
+
+/* Visible, unanimated focus ring on everything interactive. */
+:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Motion: transform/opacity only, short, and collapses under reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation: rise 0.6s var(--ease-out-soft) both;
+    animation-delay: calc(var(--step, 0) * 90ms);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Long beach names and headings must wrap inside their box, never overflow. */
+.wrap-anywhere {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
