@@ -1,8 +1,10 @@
-/* Hallmark · macrostructure: Bento Grid · genre: modern-minimal · tone: utilitarian-coastal
+/* Hallmark · macrostructure: Stat-Led band rhythm · genre: modern-minimal · tone: utilitarian-coastal
  * theme: custom (brand-locked SunScout app tokens) · vibe: "measured coastal data product"
- * paper: #FAF6F0 sand (light band) · display: Inter sans (roman only) · accent: ocean teal, coral used sparingly
- * axes: light / grotesk-sans / cool-teal · shape rule: buttons pill, cards 16px, inputs 8px
- * states: default · hover · focus-visible · active covered per component
+ * paper: #FAF6F0 sand (light band) · display: Inter sans (roman only) · accent: ocean teal primary, sunset coral promoted to UI
+ * axes: light / grotesk-sans / cool-teal + warm-coral secondary · shape rule: buttons pill, cards 16px, inputs 8px
+ * Home 2026-09-16 de-boring pass: asymmetric hero, full-bleed marine data band, full-bleed coral
+ * install band, single card grid (showcase), time-of-day variant art (golden/blue/midday;
+ * morning excluded as a near-duplicate of base art).
  */
 
 @import "tailwindcss";
@@ -106,4 +108,17 @@ body {
 .wrap-anywhere {
   overflow-wrap: anywhere;
   min-width: 0;
+}
+
+/* Focus-ring overrides for the full-bleed bands. The global :focus-visible
+ * rule above is unlayered and therefore wins over Tailwind's utility layer,
+ * so per-element outline-color utilities are dead code there. A teal ring
+ * measures 1.3:1 on the marine band and 2.6:1 on coral, below the 3:1
+ * non-text minimum. Sand clears 14:1 on marine; marine clears 6:1 on coral. */
+section.bg-marine :focus-visible {
+  outline-color: var(--color-sand);
+}
+
+section.bg-coral :focus-visible {
+  outline-color: var(--color-marine);
 }
